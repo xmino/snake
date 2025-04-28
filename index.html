@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        canvas {
+            display: block;
+            margin: 20px auto;
+            background: #000;
+            border: 2px solid white;
+        }
+        #startButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: lime;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #startButton:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<h1>Snake Game</h1>
+<button id="startButton">Start Game</button>
+<canvas id="gameCanvas" width="400" height="400" style="display: none;"></canvas>
+<script>
+    const startButton = document.getElementById('startButton');
+    const canvasG = document.getElementById('gameCanvas');
+
+    startButton.addEventListener('click', () => {
+        startButton.style.display = 'none';
+        canvasG.style.display = 'block';
+        const script = document.createElement('script');
+        script.src = 'snakeGame.js';
+        document.body.appendChild(script);
+    });
+</script>
+</body>
+</html>
